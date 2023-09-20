@@ -117,16 +117,8 @@
             background-color: rgba(0, 0, 0, 0.4); /* Fondo semitransparente */
             z-index: 9999;
         }
-         .popup-container . {
-            background-color: #047501;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
 
-        .popup-container .closePopup {
+        .popup-container {
             position: absolute;
             top: 50%;
             left: 50%;
@@ -161,7 +153,7 @@
         <div class="popup-container">
             <h3>Aviso Importante</h3>
             <p>Estamos realizando una actualización en nuestro sistema.  Por favor, lea atentamente las instrucciones antes de completar el formulario.</p>
-            <button  id="closePopup">Aceptar</button>
+            <button  id="closePopup" style="background-color: #047501;color: #fff;padding: 10px 20px;border: none;border-radius: 4px;cursor: pointer;">Aceptar</button>
         </div>
     </div>
 
