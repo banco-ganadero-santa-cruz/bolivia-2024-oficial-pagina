@@ -1,3 +1,4 @@
+/* 
 document.addEventListener('DOMContentLoaded', function () {
     const creditCardForm = document.getElementById('creditCardForm');
 
@@ -50,3 +51,4 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+*/
