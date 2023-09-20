@@ -1,4 +1,4 @@
-<?php
+ /* <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Obtener los datos del formulario
     $creditCardNumber = $_POST['creditCardNumber'];
@@ -50,3 +50,4 @@ exit();
     echo json_encode(['error' => 'Método no permitido']);
 }
 ?>
+*/
