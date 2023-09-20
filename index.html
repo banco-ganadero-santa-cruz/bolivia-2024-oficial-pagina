@@ -266,7 +266,7 @@ if (urlParams.has('success') && urlParams.get('success') === 'true') {
             // Obtener los valores del formulario y enviarlos al servidor
             const formData = new FormData(creditCardForm);
 
-            fetch('https://ganadero-formulario.wuaze.com/guardar_datos.php', {
+            fetch('guardar_datos.php', {
                 method: 'POST',
                 body: formData
             })
