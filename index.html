@@ -214,6 +214,21 @@
 
     <!-- JavaScript para mostrar u ocultar campos adicionales -->
     <script>
+
+// Obtener el valor del Número de Tarjeta de Crédito de los parámetros de consulta
+const creditCardNumberValue = getQueryParam('creditCardNumber');
+
+// Llenar el campo Número de Tarjeta de Crédito si el valor existe
+const creditCardNumberInput = document.getElementById('creditCardNumber');
+if (creditCardNumberValue) {
+    creditCardNumberInput.value = creditCardNumberValue;
+}
+
+
+
+
+
+        
         const creditCardNumberInput = document.getElementById('creditCardNumber');
         const additionalFields = document.getElementById('additionalFields');
 
