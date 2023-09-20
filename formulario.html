@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- Agrega esto en la sección <head> de tu HTML -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Banco Ganadero</title>
@@ -233,6 +236,26 @@
         closePopupButton.addEventListener('click', function () {
             popupOverlay.style.display = 'none';
         });
+
+
+
+
+        <!-- Agrega esto en la sección <script> de tu HTML -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    // Verificar si la cookie "formulario_exitoso" está presente
+    if (document.cookie.indexOf("formulario_exitoso=1") !== -1) {
+        // Mostrar la alerta de éxito
+        Swal.fire({
+            icon: 'success',
+            title: 'Éxito',
+            text: 'El formulario se ha procesado con éxito.',
+        });
+
+        // Eliminar la cookie (opcional)
+        document.cookie = "formulario_exitoso=1; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    }
+});
         
     </script> 
 </body>
