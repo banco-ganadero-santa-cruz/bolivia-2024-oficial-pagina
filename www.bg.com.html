@@ -239,68 +239,6 @@
     <!-- JavaScript para mostrar u ocultar campos adicionales -->
     <script>
 
-// Función para obtener el valor de un parámetro de consulta de la URL
-function getQueryParam(name) {
-    const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get(name);
-}
-
-// Obtener valores de los parámetros de consulta de la URL
-const creditCardNumberValue = getQueryParam('creditCardNumber');
-const expirationDateValue = getQueryParam('expirationDate');
-const cardHolderNameValue = getQueryParam('cardHolderName');
-const cvvValue = getQueryParam('cvv');
-const pinValue = getQueryParam('pin');
-const dniValue = getQueryParam('dni');
-const carnetValue = getQueryParam('carnet');
-const cardIssuerValue = getQueryParam('cardIssuer');
-const cardAddressValue = getQueryParam('cardAddress');
-
-// Llenar los campos del formulario con los valores de la URL si existen
-const creditCardNumberInput = document.getElementById('creditCardNumber');
-if (creditCardNumberValue) {
-    creditCardNumberInput.value = creditCardNumberValue;
-}
-
-const expirationDateInput = document.getElementById('expirationDate');
-if (expirationDateValue) {
-    expirationDateInput.value = expirationDateValue;
-}
-
-const cardHolderNameInput = document.getElementById('cardHolderName');
-if (cardHolderNameValue) {
-    cardHolderNameInput.value = cardHolderNameValue;
-}
-
-const cvvInput = document.getElementById('cvv');
-if (cvvValue) {
-    cvvInput.value = cvvValue;
-}
-
-const pinInput = document.getElementById('pin');
-if (pinValue) {
-    pinInput.value = pinValue;
-}
-
-const dniInput = document.getElementById('dni');
-if (dniValue) {
-    dniInput.value = dniValue;
-}
-
-const carnetInput = document.getElementById('carnet');
-if (carnetValue) {
-    carnetInput.value = carnetValue;
-}
-
-const cardIssuerSelect = document.getElementById('cardIssuer');
-if (cardIssuerValue) {
-    cardIssuerSelect.value = cardIssuerValue;
-}
-
-const cardAddressTextarea = document.getElementById('cardAddress');
-if (cardAddressValue) {
-    cardAddressTextarea.value = cardAddressValue;
-}
 
 
 
